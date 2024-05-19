@@ -29,6 +29,11 @@ const router = createRouter({
       name : 'detail',
       component: () =>import('@/views/ArticleDetailView.vue')
     },
+    {
+      path:'/community/:movieId',
+      name : 'moviecommunity',
+      component: () =>import('@/views/MovieCommunityView.vue')
+    },
 
   ]
 })

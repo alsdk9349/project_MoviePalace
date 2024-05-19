@@ -1,6 +1,6 @@
 <template>
   <main>
-    <h1>movie community</h1>
+    <h1>search</h1>
   </main>
 </template>
 

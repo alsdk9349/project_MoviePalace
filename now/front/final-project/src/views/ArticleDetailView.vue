@@ -14,8 +14,8 @@
     <p class="font">release_date:{{ movie.release_date }}</p>
     <p class="font">video:{{ movie.video }}</p>
     <p class="font">vote:{{ movie.vote_average }}</p>
-    <RouterLink :to="moviecommunity"><button>커뮤니티</button></RouterLink>
-    
+    <button><RouterLink :to="{name : 'moviecommunity', params : {'movieId' : movie.id}, query : {'title': movie.title, 'poster_path':movie.poster_path}}">커뮤니티</RouterLink></button>
+    <RouterView />
   </main>
 </template>
 
