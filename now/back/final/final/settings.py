@@ -32,7 +32,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'movies',
-    'community',
     'corsheaders',
     'rest_framework',
     'django.contrib.sites',

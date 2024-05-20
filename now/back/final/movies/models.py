@@ -34,3 +34,11 @@ class NowMovie(models.Model):
     def save(self, *args, **kwargs):
         self.genres = ','.join(map(str, self.genres))  # 배열을 문자열로 변환하여 저장
         super(NowMovie, self).save(*args, **kwargs)
+
+class Comment(models.Model):
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name='comments')
+    title = models.CharField(max_length=100)
+    content = models.TextField(null = False)
+    category = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

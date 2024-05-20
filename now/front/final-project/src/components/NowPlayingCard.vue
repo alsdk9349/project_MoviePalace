@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="cardst">
-      <img class="img" :src=imgUrl alt="">
+      <img class="img" :src="`https://image.tmdb.org/t/p/original/${props.movie.poster_path}`" alt="X">
       {{ movie.title }}
     </div>
   </div>
@@ -11,7 +11,6 @@
 const props = defineProps({
   movie : Object
 })
-const imgUrl = "https://image.tmdb.org/t/p/original" + props.movie.poster_path
 
 </script>
 
