@@ -25,7 +25,7 @@ def movie_list(request):
         movies = Movie.objects.all()
 
         ## movie를 정렬하기
-
+        
 
         paginator = Paginator(movies, 20)
 
