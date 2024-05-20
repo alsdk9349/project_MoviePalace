@@ -6,7 +6,7 @@ from .serializers import MovieListSerializer,NowMovieListSerializer, CommentList
 from django.core.paginator import Paginator
 from django.http import JsonResponse
 from rest_framework import status
-
+from django.db.models import Count
 
 @api_view(['GET'])
 def recommend_list(request):
@@ -22,13 +22,9 @@ def detail(request):
 @api_view(['GET'])
 def movie_list(request):
     if request.method == 'GET':
-        movies = Movie.objects.all()
-
-        ## movie를 정렬하기
-        
+        movies = Movie.objects.annotate(comment_count=Count('comments')).order_by('-comment_count')
 
         paginator = Paginator(movies, 20)
-
 
         page = request.GET.get('page')
         page_movies = paginator.get_page(page)
