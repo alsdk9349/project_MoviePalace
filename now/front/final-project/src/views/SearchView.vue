@@ -15,9 +15,10 @@ import SearchedCard from '@/components/SearchedCard.vue';
 const searchWord = ref("")
 const searchMovie = ref([])
 const searching = function(){
+
   axios ({
     method : 'GET',
-    url : `http://127.0.0.1:8000/movies/search/${searchWord}`
+    url : `http://127.0.0.1:8000/movies/search/${searchWord.value}`
   }).then((response) =>{
     console.log(response.data)
     searchMovie.value = response.data
