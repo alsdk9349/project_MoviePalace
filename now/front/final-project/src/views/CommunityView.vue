@@ -4,9 +4,11 @@
     <ArticleCard v-for="movie in movies" :movie="movie" :key="movie.pk"/>
     <nav aria-label="Page navigation example">
       <ul class="pagination">
-        <li class="page-item page-link" @click="minus()">Previous</li>
+        <li class="page-item page-link" @click="start()">처음으로</li>
+        <li class="page-item page-link" @click="minus()">이전</li>
           <li v-for="num in 10" class="page-item page-link" @click="pageChange(num + pageValue)">{{num + pageValue}}</li>
-        <li class="page-item page-link" @click="plus()">Next</li>
+        <li class="page-item page-link" @click="plus()">다음</li>
+        <li class="page-item page-link" @click="end()">끝으로</li>
       </ul>
     </nav>
   </main>
@@ -30,6 +32,13 @@ function plus(){
     pageValue.value += 10
   }
 }
+function start(){
+  pageValue.value = 0 
+}
+function end(){
+    pageValue.value = 460
+  }
+
 function pageChange(num){
   pageNum.value = num
   console.log(pageNum.value)

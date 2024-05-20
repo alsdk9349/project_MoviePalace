@@ -2,7 +2,7 @@
   <div>
     <div class="cardst"  @click="goDetail()">
       <img class="img" :src="`https://image.tmdb.org/t/p/original/${props.movie.poster_path}`" alt="X">
-      {{ movie.title }}
+      <p>{{ movie.title }}</p>
     </div>
   </div>
 </template>

@@ -1,10 +1,20 @@
-<template>
-  <div @click = "goDetail(movie.id)">
-    <!-- movie.id = {{ movie.id }} -->
-    <div class="divfont">
-      <img class="img" :src="`https://image.tmdb.org/t/p/original/${prop.movie.poster_path}`" alt="X">
-      <p>{{ movie.title }}</p>
-      <p>{{ movie.overview }}</p>
+`<template>
+  <div class="d-flex justify-content-center" @click = "goDetail(movie.id)">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <div class="ticket d-flex align-items-center justify-content-between">
+        <img class="img" :src="`https://image.tmdb.org/t/p/original/${prop.movie.poster_path}`" alt="X">
+        <div>
+          <h2>영화 관람권</h2>
+          <p>{{ movie.title }}</p>
+          <p>{{ movie.released_date }}</p>
+        </div>
+      </div>
+      <div class="borderst">
+        <div class="barcode">
+          바코드
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -25,12 +35,37 @@ function goDetail(movieId){
 </script>
 
 <style scoped>
-.divfont {
+.ticket {
   color : black;
-  border : 2px solid white;
+
+  border : 2px solid lightgoldenrodyellow;
+  background-color: lightgoldenrodyellow;
+  width: 80vw;
+  height: 20rem;
+  margin-top: 2rem;
+  margin-bottom : 2rem;
 }
+
 .img{
-  width: 20rem;
-  height: 30rem;
+  margin : 1rem;
+  width: 13rem;
+  height: 18rem;
+}
+
+.barcode{
+  /* background-color: green; */
+  margin: 1rem;
+  width : 90%;
+  height: 90%;
+}
+
+.borderst{
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  width: 15vw;
+  height: 20rem;
+ 
+  border : 2px solid white; 
 }
 </style>
