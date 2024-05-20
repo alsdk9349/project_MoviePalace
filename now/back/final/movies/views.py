@@ -66,28 +66,42 @@ def community(request, movie_pk):
         serializer = CommentListSerializer(comments, many = True)
         return Response(serializer.data)
 
-def search_filter(datas, object):
-    serializers  = []
-    for serializer in datas:
-        print('word')
-        print(object[0])
-        print('title')
-        print(serializer.get('title'))
-        # if object in serializer.get('title'):
-        #     print('--------------------------------')
-        #     print(serializer.get('title'))
-        #     print('--------------------------------')
-        #     serializer = MovieListSerializer(serializer)
-        #     serializers.append(serializer.data)
+# def search_filter(datas, word):
+#     serializers  = []
+#     for serializer in datas:
+#         print('word')
+#         print(word)
+#         print('title')
+#         print(serializer.get('title'))
+#         if word in serializer.get('title'):
+#             print('--------------------------------')
+#             print(serializer.get('title'))
+#             print('--------------------------------')
+#             # serializer = MovieListSerializer(serializer)
+#             serializers.append(serializer.data)
     
-    return serializers
+#     return serializers
+
+# @api_view(['GET'])
+# def search(request, word):
+#     movies = Movie.objects.all()        
+#     serializers = MovieListSerializer(movies, many=True).data
+#     serializer = search_filter(serializers, word)
+#     serializer_data = serializer[:21]
+
+#     return Response(serializer_data)
+
+def search_filter(datas, word):
+    filtered_serializers = []
+    for serializer in datas:
+        if word in serializer.get('title'):
+            filtered_serializers.append(serializer)
+    return filtered_serializers
 
 @api_view(['GET'])
 def search(request, word):
     movies = Movie.objects.all()        
-    serializers = MovieListSerializer(movies, many=True)
-    serializer = search_filter(serializers.data, word)
-    serializer = serializer[:21]
+    serializers = MovieListSerializer(movies, many=True).data
+    filtered_serializers = search_filter(serializers, word)[:21]
 
-    return Response(serializer)
-
+    return Response(filtered_serializers)
