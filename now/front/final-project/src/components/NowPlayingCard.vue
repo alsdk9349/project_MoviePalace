@@ -21,7 +21,7 @@ const goDetail = function(){
 
 <style scoped>
 .cardst {
-  color:white;
+  color:black;
   border: 2px solid white;
 }
 .img{

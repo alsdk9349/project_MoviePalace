@@ -26,7 +26,7 @@ function goDetail(movieId){
 
 <style scoped>
 .divfont {
-  color : white;
+  color : black;
   border : 2px solid white;
 }
 .img{

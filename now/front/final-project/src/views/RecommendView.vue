@@ -73,20 +73,6 @@ watch(selectedGenre, (newselectedGenre)=>{
   })
 })
 
-// onUpdated(()=>{
-  
-//   axios({
-//     method : 'get', 
-//     url : `http://127.0.0.1:8000/movies/recommend/genred/${selectedGenre.value}`,
-    
-//   }).then((response) => {
-//     genred.value = response.data
-//     console.log(genred.value)
-//   })
-//   .catch((error) => {
-//     console.log(error)
-//   })
-// })
 </script>
 
 <style scoped>
@@ -95,5 +81,10 @@ watch(selectedGenre, (newselectedGenre)=>{
 }
 .h1 {
   color:white;
+  margin-bottom: 30px;
+}
+select {
+  margin: 0; /* 하단 여백 제거 */
+  padding:0;
 }
 </style>
