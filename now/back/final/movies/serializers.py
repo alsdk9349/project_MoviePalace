@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Movie, NowMovie
+from .models import Movie, NowMovie, Comment
+
 
 class MovieListSerializer(serializers.ModelSerializer):
     class Meta:
@@ -26,3 +27,10 @@ class NowMovieListSerializer(serializers.ModelSerializer):
             if value == '' or value is None:
                 raise serializers.ValidationError("At least one field is empty")
         return attrs
+    
+
+class CommentListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = '__all__'
+        read_only_fields = ('movie',)

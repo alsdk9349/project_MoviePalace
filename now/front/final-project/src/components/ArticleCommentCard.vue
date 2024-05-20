@@ -1,10 +1,15 @@
 <template>
   <div>
-    <h1>Article Comment Card</h1>
+    {{ comment }}
   </div>
 </template>
 
 <script setup>
+
+defineProps({
+  comment : Object
+})
+
 
 </script>
 

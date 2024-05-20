@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .models import Movie, NowMovie
-from .serializers import MovieListSerializer,NowMovieListSerializer
+from .models import Movie, NowMovie, Comment
+from .serializers import MovieListSerializer,NowMovieListSerializer, CommentListSerializer
 from django.core.paginator import Paginator
 from django.http import JsonResponse
+from rest_framework import status
+
 
 @api_view(['GET'])
 def recommend_list(request):
@@ -21,6 +23,10 @@ def detail(request):
 def movie_list(request):
     if request.method == 'GET':
         movies = Movie.objects.all()
+
+        ## movie를 정렬하기
+
+
         paginator = Paginator(movies, 20)
 
 
@@ -49,3 +55,17 @@ def genre_list(request, genre_pk):
         serializer = serializer[:21]
 
         return Response(serializer)
+    
+@api_view(['GET','POST'])
+def community(request, movie_pk):
+    movie = Movie.objects.get(pk = movie_pk)
+
+    if request.method == 'POST':
+        serializer = CommentListSerializer(data = request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save(movie = movie)
+            return Response(serializer.data, status = status.HTTP_201_CREATED)
+    else:
+        comments = Comment.objects.filter(movie_id=movie_pk)
+        serializer = CommentListSerializer(comments, many = True)
+        return Response(serializer.data)

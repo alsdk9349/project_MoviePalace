@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="cardst">
-      <img class="img" :src=imgUrl alt="X">
+      <img class="img" :src="`https://image.tmdb.org/t/p/original/${props.movie.poster_path}`" alt="X">
       <p>{{ movie.title }}
 </p>
     </div>
@@ -9,12 +9,14 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 const props = defineProps({
   movie : Object,
 })
-const imgUrl = "https://image.tmdb.org/t/p/original" + props.movie.poster_path
+
 
 </script>
+
 
 <style scoped>
 .cardst {

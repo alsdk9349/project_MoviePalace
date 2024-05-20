@@ -1,12 +1,24 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
+import { createMovieComment } from '@/apis/commentApi'
+
 export const useCounterStore = defineStore('counter', () => {
-  const count = ref(0)
-  const doubleCount = computed(() => count.value * 2)
-  function increment() {
-    count.value++
+  const comments = ref([])
+
+  const addComment = (movieId, newComment) => {
+    return createMovieComment(movieId, newComment)
+    .then((response) => {
+      if (response.status === 201){
+        comments.value.push(response.data)
+      }
+    }).catch((error) => {
+      console.log(error)
+      throw error
+    })
+
   }
 
-  return { count, doubleCount, increment }
+  return {comments, addComment}
 })
+
