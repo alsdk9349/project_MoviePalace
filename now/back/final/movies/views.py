@@ -69,22 +69,17 @@ def community(request, movie_pk):
 def search_filter(datas, object):
     serializers  = []
     for serializer in datas:
-        print('word')
-        print(object[0])
-        print('title')
-        print(serializer.get('title'))
-        # if object in serializer.get('title'):
-        #     print('--------------------------------')
-        #     print(serializer.get('title'))
-        #     print('--------------------------------')
-        #     serializer = MovieListSerializer(serializer)
-        #     serializers.append(serializer.data)
+        if object in serializer.get('title'):
+
+            serializer = MovieListSerializer(serializer)
+            serializers.append(serializer.data)
     
     return serializers
 
 @api_view(['GET'])
 def search(request, word):
-    movies = Movie.objects.all()        
+    movies = Movie.objects.all() 
+    print( )      
     serializers = MovieListSerializer(movies, many=True)
     serializer = search_filter(serializers.data, word)
     serializer = serializer[:21]
