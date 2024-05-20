@@ -4,6 +4,7 @@
     <img class="img" :src=imgUrl alt="X">
   </div>
   
+  
 </template>
 
 <script setup>
