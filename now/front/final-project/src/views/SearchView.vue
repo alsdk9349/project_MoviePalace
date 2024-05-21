@@ -3,7 +3,7 @@
     <h1>영화 검색</h1>
     <div class="col-md-6">
       <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="검색어를 입력하세요." aria-label="Recipient's username" aria-describedby="basic-addon2" v-model="searchWord">
+        <input @keyup.enter="searching" type="text" class="form-control" placeholder="검색어를 입력하세요." aria-label="Recipient's username" aria-describedby="basic-addon2" v-model="searchWord">
         <button @click="searching" class="btn btn-success">검색</button>
       </div>  
     </div>

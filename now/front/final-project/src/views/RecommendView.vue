@@ -1,8 +1,10 @@
 <template>
   <main>
     <h1>현재 상영중</h1>
-    <div v-for="movie in movies" :key="movie.id">
-      <NowPlayingCard :movie="movie"/>
+    <div >
+      <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2" >
+        <NowPlayingCard class="col" v-for="movie in movies" :key="movie.id" :movie="movie"/>
+      </div>
     </div>
     <h1>장르별 추천</h1>
     <label for="selectedGenre" class="form-label"></label>
