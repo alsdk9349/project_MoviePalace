@@ -13,7 +13,7 @@
         <p class="font">상영시간 : {{ movie.runtime }}분</p>
         <p class="font">개봉일 : {{ movie.release_date }}</p>
         <p class="font">평점 : {{ movie.vote_average }}</p>
-        <button><RouterLink :to="{name : 'moviecommunity', params : {'movieId' : movie.id}, query : {'title': movie.title, 'poster_path':movie.poster_path}}">커뮤니티</RouterLink></button>
+        <RouterLink class="linkst" :to="{name : 'moviecommunity', params : {'movieId' : movie.id}, query : {'title': movie.title, 'poster_path':movie.poster_path}}">커뮤니티</RouterLink>
       </div>
     </div>
 
@@ -59,6 +59,14 @@ axios({
 .img {
   width : 20rem;
   height : 30rem;
+  margin-right: 1rem;
 }
+.linkst{
+  text-decoration: none;
+  color : white;
+  background-color: olivedrab;
+  padding : 0.3rem;
 
+  border : 3px solid olivedrab;
+}
 </style>
