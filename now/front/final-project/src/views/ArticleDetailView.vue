@@ -2,18 +2,21 @@
 <template>
   <main>
     <h1>ArticleDetail</h1>
-    <img class="img" :src=imgUrl alt="X">
-    <div class="d-flex">
-      <h1 class="font">제목 : {{ movie.title }}</h1>
-      <p class="font">장르 : 
-        <span v-for="genre, index in movie.genres"><span v-if="index!== 0">, </span>{{ genre.name }}</span>
-      </p>
-      <p class="font">개요 : {{ movie.overview }}</p>
-      <p class="font">상영시간 : {{ movie.runtime }}분</p>
-      <p class="font">개봉일 : {{ movie.release_date }}</p>
-      <p class="font">평점 : {{ movie.vote_average }}</p>
-      <button><RouterLink :to="{name : 'moviecommunity', params : {'movieId' : movie.id}, query : {'title': movie.title, 'poster_path':movie.poster_path}}">커뮤니티</RouterLink></button>
+    <div class="d-flex" style="border: solid black 5px; margin:20px">
+      <img class="img" :src=imgUrl alt="X">
+      <div>
+        <h1 class="font">제목 : {{ movie.title }}</h1>
+        <p class="font">장르 : 
+          <span v-for="genre, index in movie.genres"><span v-if="index!== 0">, </span>{{ genre.name }}</span>
+        </p>
+        <p class="font">개요 : {{ movie.overview }}</p>
+        <p class="font">상영시간 : {{ movie.runtime }}분</p>
+        <p class="font">개봉일 : {{ movie.release_date }}</p>
+        <p class="font">평점 : {{ movie.vote_average }}</p>
+        <button><RouterLink :to="{name : 'moviecommunity', params : {'movieId' : movie.id}, query : {'title': movie.title, 'poster_path':movie.poster_path}}">커뮤니티</RouterLink></button>
+      </div>
     </div>
+
     <RouterView />
   </main>
 </template>
@@ -51,9 +54,11 @@ axios({
 <style scoped>
 .font{
   color : black;
+  font-weight: bold;
 }
 .img {
   width : 20rem;
   height : 30rem;
 }
+
 </style>
