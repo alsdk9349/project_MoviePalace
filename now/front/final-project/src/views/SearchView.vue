@@ -11,6 +11,7 @@
 
     <!-- 밑에 search된 카드 components 띄우기 -->
     <span v-if="searchMovie.length"> 
+      <p>{{ searchMovie.length }}개의 검색결과가 있습니다.</p>
     <SearchedCard v-for="movie in searchMovie" :key="movie.pk" :movie="movie"/>
     </span>
     <span v-else-if="flag && !searchMovie.length">
