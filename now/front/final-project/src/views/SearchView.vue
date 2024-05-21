@@ -1,6 +1,8 @@
 <template>
   <main>
-    <h1>영화 검색</h1>
+    <div class="title">
+      <h1>영화 검색</h1>
+    </div>
     <div class="col-md-6 offset-md-3 mt-3">
       <div class="input-group mb-3 ">
         <input @keyup.enter="searching" type="text" class="form-control" placeholder="검색어를 입력하세요." aria-label="Recipient's username" aria-describedby="basic-addon2" v-model="searchWord">
@@ -46,5 +48,12 @@ const searching = function(){
 </script>
 
 <style scoped>
-
+.title {
+  text-align: center; 
+  margin-top: 30px; 
+  margin-left: 100px;
+  margin-right: 100px;
+  color: white; 
+  background-color: rgba(100, 100, 100, 1);
+}
 </style>

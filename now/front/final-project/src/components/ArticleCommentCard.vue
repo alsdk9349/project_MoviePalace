@@ -1,8 +1,8 @@
 <template>
   <div style="border: 2px solid black;">
+    <p> 분류 : {{ comment.category }}</p>
     <p> 대상 : {{ comment.title }}</p>
     <p> 의견 : {{ comment.content }}</p>
-    <p> 분류 : {{ comment.category }}</p>
     <p> 생성 시간 : {{ formattedDate }}</p>
   </div>
 </template>

@@ -1,6 +1,8 @@
 <template>
   <main>
-    <h1>Community</h1>
+    <div class="title">
+      <h1>소통 창구</h1>
+    </div>
     <ArticleCard v-for="movie in movies" :movie="movie" :key="movie.pk"/>
     <nav aria-label="Page navigation example">
       <ul class="pagination">
@@ -68,5 +70,12 @@ axios({
 </script>
 
 <style scoped>
-
+.title {
+  text-align: center; 
+  margin-top: 30px; 
+  margin-left: 100px;
+  margin-right: 100px;
+  color: white; 
+  background-color: rgba(100, 100, 100, 1);
+}
 </style>
