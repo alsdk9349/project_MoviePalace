@@ -79,7 +79,7 @@ watch(selectedGenre, (newselectedGenre)=>{
 
 <style scoped>
 .option{
-  color:white;
+  color:black;
 }
 .h1 {
   color:white;

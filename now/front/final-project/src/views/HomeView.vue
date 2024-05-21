@@ -7,39 +7,27 @@
         </video>
       </div>
       <div class="carousel-container">
-        <div id="carouselExampleIndicators" class="carousel slide ">
-          <div class="carousel-indicators">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <!-- <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-          </div>
+          </div> -->
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img :src="homeimg1" class="d-block img" alt="Firstslide">
+            <div class="carousel-item" :class="{ active: currentSlideIndex === index }" v-for="(image, index) in images" :key="index">
+              <img :src="image" class="d-block img" :alt="'Slide ' + (index + 1)">
             </div>
-            <div class="carousel-item">
-              <img :src="homeimg2" class="d-block img" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img :src="homeimg3" class="d-block img" alt="...">
-            </div>
-          <div class="carousel-item">
-            <img :src="homeimg4" class="d-block img" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img :src="homeimg5" class="d-block img" alt="...">
-          </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
-        </button>
+        </button> -->
       </div>
       </div>
     </div>
@@ -101,6 +89,20 @@ import homeimg3 from '@/assets/homeimage3.jpg'
 import homeimg4 from '@/assets/homeimage4.jpg'
 import homeimg5 from '@/assets/homeimage5.png'
 
+import { ref, onMounted } from 'vue';
+const images = [homeimg1, homeimg2, homeimg3, homeimg4, homeimg5];
+const totalSlides = images.length;
+const intervalTime = 1000; // 5초마다 슬라이드 변경
+
+const currentSlideIndex = ref(0);
+
+const changeSlide = () => {
+  currentSlideIndex.value = (currentSlideIndex.value + 1) % totalSlides;
+};
+
+onMounted(() => {
+  setInterval(changeSlide, intervalTime);
+});
 </script>
 
 
@@ -123,8 +125,8 @@ import homeimg5 from '@/assets/homeimage5.png'
 }
 
 .carousel-item img {
-  width: 90vw;
-  height: 60vh;
+  width: 80vw;
+  height: 50vh;
 }
 
 .video-background {

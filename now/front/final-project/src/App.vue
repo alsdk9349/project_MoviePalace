@@ -1,14 +1,14 @@
 <template>
   <header>
-    <div class="wrapper">
+    <div class="d-flex">
       <nav class='navbox'>
-        <RouterLink class="" :to="{name : 'home'}">
-          <img src="@/assets/logo.jpg" alt="" class="img">
-        </RouterLink> 
         <RouterLink class="link" :to="{name : 'recommend'}">영화추천</RouterLink> 
         <RouterLink class="link" :to="{name : 'search'}">영화검색</RouterLink> 
-        <RouterLink class="link" :to="{name : 'community'}">커뮤니티</RouterLink>
+        <RouterLink class="link" :to="{name : 'community'}">소통창구</RouterLink>
       </nav>
+      <RouterLink class="navbox" :to="{name : 'home'}">
+        <img src="@/assets/logo.jpg" alt="" class="img">
+      </RouterLink> 
     </div>
   </header>
   <h1> <br></h1>
