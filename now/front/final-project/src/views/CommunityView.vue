@@ -78,4 +78,16 @@ axios({
   color: white; 
   background-color: rgba(100, 100, 100, 1);
 }
+.pagination{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.page-item{
+  color: ivory;
+  background-color: rgb(85, 138, 85);
+}
+.pagination .page-item {
+  cursor: pointer;
+}
 </style>

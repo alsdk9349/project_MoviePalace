@@ -2,7 +2,7 @@
   <div class="d-flex">
     <div class="up">
       <span><img class="img" :src=imgUrl alt="포스터가 없습니다."></span>
-      <h1>{{ movie.title }}</h1>
+      <h1 style="text-align: center; font-style:italic;">{{ movie.title }}</h1>
     </div>
     <div class="up" style="width: 100%;">
       <div class="mb-3">
@@ -20,7 +20,7 @@
         <label for="content" class="form-label">의견</label>
         <textarea class="form-control" v-model="comment.content" placeholder="의견을 적어주세요." rows="5" required></textarea>
       </div>
-      <button @click="submitComment" class="btn btn-info mb-5">제출</button>
+      <button @click="submitComment" class="btn btn-success" style="color: ivory; margin-left: 90%;">제출</button>
     </div>
   </div>
   <!-- 아티클카드로 정보 보내서 DB에 저장된 comments 정보들 v-for로 전송해서 띄우기 -->

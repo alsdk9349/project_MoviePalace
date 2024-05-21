@@ -4,10 +4,10 @@
     <div class="d-flex align-items-center justify-content-between">
       <div class="ticket d-flex align-items-center" style="width: 1200px">
         <img class="img" :src="`https://image.tmdb.org/t/p/original/${prop.movie.poster_path}`" alt="X">
-        <div class="col-md-6 offset-md-1" style="margin: 0; width:750px">
-          <h2>영화 관람권</h2>
-          <p>{{ movie.title }}</p>
-          <p>{{ movie.released_date }}</p>
+        <div class="col-md-6 offset-md-1" style="margin: 0; width:750px; background-color: lightgoldenrodyellow;">
+          <h1 style="margin-top: 0;margin-bottom: 30px;">영화 관람권</h1>
+          <h3 style="margin-top: 70px;">{{ movie.title }}</h3>
+          <p>{{ currentDateTime }}</p>
         </div>
         <!-- <div class="barcode-container justify-content-center align-items-center" >
           <img :src="qrcode" alt="X" style="max-width: 100%; height: 40%; display: block; margin: auto;">
@@ -25,6 +25,9 @@ import { useRouter } from 'vue-router'
 import { ref } from 'vue'
 import barcode from '@/assets/Barcode.jpg'
 import qrcode from '@/assets/QRcode.png'
+const currentDate = new Date().toLocaleDateString(); // 현재 날짜 가져오기
+const currentTime = new Date().toLocaleTimeString(undefined, {hour: 'numeric', minute: 'numeric'}); // 시간과 분만 가져오기
+const currentDateTime = `${currentDate} ${currentTime}`; // 현재 날짜와 시간 합치기
 const prop = defineProps({
   movie:Object
 })
@@ -75,4 +78,15 @@ function goDetail(movieId){
   border : 2px solid white; 
   text-align: center;
 }
+.ticket h1{
+  background-color:lightgoldenrodyellow;
+}
+.ticket p,h3{
+  background-color:lightgoldenrodyellow;
+  margin: 10px;
+  font-style: italic;
+}
+/* .ticket h3{
+  background-color:lightgoldenrodyellow;
+} */
 </style>
