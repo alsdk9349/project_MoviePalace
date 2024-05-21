@@ -48,7 +48,7 @@ def genre_list(request, genre_pk):
         movies = Movie.objects.all()        
         serializers = MovieListSerializer(movies, many=True)
         serializer = genre_filter(serializers.data, genre_pk)
-        serializer = serializer[:21]
+        serializer = serializer[:20]
 
         return Response(serializer)
     
