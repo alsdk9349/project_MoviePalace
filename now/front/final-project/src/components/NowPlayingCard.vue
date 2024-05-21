@@ -34,15 +34,19 @@ const goDetail = function(){
   margin : 1rem;
   display: grid;
   justify-content: center;
+  
 
 }
 .img{
   width: 95%;
   height: 100%;
+  justify-self: center;
 }
 .textst{
   text-align: center;
-  /* font; */
+  align-content: center;
   background-color: rgba(157, 212, 173, 0);
+  border : 2px solid gray;
+  color:rgb(101, 116, 101);
 }
 </style>
