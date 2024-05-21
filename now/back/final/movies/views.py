@@ -66,10 +66,10 @@ def community(request, movie_pk):
         serializer = CommentListSerializer(comments, many = True)
         return Response(serializer.data)
 
-def search_filter(datas, object):
+def search_filter(datas, word):
     serializers  = []
     for serializer in datas:
-        if object in serializer.get('title'):
+        if word in serializer.get('title'):
 
             serializer = MovieListSerializer(serializer)
             serializers.append(serializer.data)
