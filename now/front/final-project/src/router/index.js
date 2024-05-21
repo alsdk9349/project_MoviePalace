@@ -34,6 +34,11 @@ const router = createRouter({
       name : 'moviecommunity',
       component: () =>import('@/views/MovieCommunityView.vue')
     },
+    {
+      path:'/chat',
+      name : 'chat',
+      component: () =>import('@/gpt-program-problem/chat.vue')
+    },
 
   ]
 })
