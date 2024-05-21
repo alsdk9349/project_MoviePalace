@@ -82,7 +82,7 @@ def search(request, word):
     print( )      
     serializers = MovieListSerializer(movies, many=True)
     serializer = search_filter(serializers.data, word)
-    serializer = serializer[:21]
+    serializer = serializer[:100]
 
     return Response(serializer)
 

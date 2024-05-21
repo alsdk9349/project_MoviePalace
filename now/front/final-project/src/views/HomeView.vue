@@ -1,23 +1,25 @@
 <template>
   <main>
-    <div id="carouselExampleIndicators" class="carousel slide">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img :src="homeimg1" class="d-block img" alt="...">
+    <div class="boxst">
+
+      <div id="carouselExampleIndicators" class="carousel slide ">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
         </div>
-        <div class="carousel-item">
-          <img :src="homeimg2" class="d-block img" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img :src="homeimg3" class="d-block img" alt="...">
-        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img :src="homeimg1" class="d-block img" alt="Firstslide">
+          </div>
+          <div class="carousel-item">
+            <img :src="homeimg2" class="d-block img" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img :src="homeimg3" class="d-block img" alt="...">
+          </div>
         <div class="carousel-item">
           <img :src="homeimg4" class="d-block img" alt="...">
         </div>
@@ -34,7 +36,8 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-
+    
+  </div>
   </main>
 </template>
 
@@ -49,9 +52,17 @@ import homeimg5 from '@/assets/homeimage5.png'
 
 
 <style scoped>
+.boxst {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(157,212,173, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-.img{
-  width: 80vw;
-  height: 70vh; 
-} 
+.carousel-item img {
+  width: 90vw;
+  height: 60vh;
+}
 </style>

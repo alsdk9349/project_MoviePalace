@@ -6,7 +6,7 @@
     <p class="font">title:{{ movie.title }}</p>
     <p class="font">adult:{{ movie.adult }}</p>
     <p class="font">genre:
-      <span v-for="genre in movie.genres">{{ genre.name }},</span>
+      <span v-for="genre, index in movie.genres"><span v-if="index!== 0">, </span>{{ genre.name }}</span>
     </p>
     <p class="font">overview:{{ movie.overview }}</p>
     <p class="font">poster:{{ movie.poster_path }}</p>
