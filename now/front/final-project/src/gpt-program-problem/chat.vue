@@ -1,27 +1,28 @@
 <template>
   <div>
     <!-- 채팅창 화면 -->
-    <section class="container" style="margin-top: 50px;">
+    <section class="container section-scrollable" style="margin-top:5rem">
       <!-- 프로필 영역 -->
-      <div class="top-area">
-        <div class="profile-area">
-          <span>길라잡이</span>
-        </div>
-      </div>
-      <!-- 채팅 영역 -->
-      <div class="chat-area chatst" ref="chatArea"></div>
 
-      <!-- 채팅창 하단 영역 -->
-      <div class="bottom-area">
-        <input class="chat-input" type="text" placeholder="할말을 입력해주세요" ref="chatInput" />
-      </div>
-    </section>
+          <div class="top-area">
+            <div class="profile-area">
+              <span>길라잡이</span>
+            </div>
+          </div>
+          <!-- 채팅 영역 -->
+          <div class="chat-area" ref="chatArea"></div>
+          
+          <!-- 채팅창 하단 영역 -->
+          <div class="bottom-area">
+            <input class="chat-input" type="text" placeholder="할말을 입력해주세요" ref="chatInput" />
+          </div>
+      </section>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
-
+import {ref} from 'vue';
 export default {
   mounted() {
     this.$nextTick(() => {
@@ -50,7 +51,9 @@ export default {
       chatContainer.scrollTop = chatContainer.scrollHeight;
     },
     chatReceive(userMsg) {
-      const answer = "";
+      // const answer = ref("");
+      // this.addChat("receive", answer.value);
+      const answer ="길라잡이"
       this.addChat("receive", answer);
     },
     sendMessageToServer(message) {
@@ -89,5 +92,19 @@ import './style.css'
 </script>
 
 <style scoped>
+/* .send-chat {
+  
+  background-color: black;
+  align-self: flex-end;
+  color : white;
+} */
+
+/* .receive-chat {
+  background-color: var(--color-gray);
+} */
+.section-scrollable{
+  height: 70vh;
+  overflow-y: auto;
+}
 
 </style>

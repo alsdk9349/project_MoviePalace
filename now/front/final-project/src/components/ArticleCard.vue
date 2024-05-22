@@ -48,8 +48,8 @@ function goDetail(movieId){
   background-color: lightgoldenrodyellow;
   width: 80vw;
   height: 20rem;
-  margin-top: 2rem;
-  margin-bottom : 2rem;
+  /* margin-top: 2rem; */
+  /* margin-bottom : 2rem; */
 }
 
 .img{

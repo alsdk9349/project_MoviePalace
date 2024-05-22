@@ -3,7 +3,7 @@
     <div class="title">
       <h1>소통 창구</h1>
     </div>
-    <ArticleCard v-for="movie in movies" :movie="movie" :key="movie.pk"/>
+    <ArticleCard class="pointer" v-for="movie in movies" :movie="movie" :key="movie.pk"/>
     <nav aria-label="Page navigation example">
       <ul class="pagination">
         <li class="page-item page-link" @click="start()">처음으로</li>
@@ -89,5 +89,10 @@ axios({
 }
 .pagination .page-item {
   cursor: pointer;
+}
+.pointer{
+  cursor: pointer;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 </style>

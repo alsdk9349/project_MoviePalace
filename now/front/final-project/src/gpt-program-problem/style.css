@@ -76,7 +76,7 @@
 /** 
   그 외
 */
-body {
+/* body {
   width: 100vw;
   height: 100vh;
   background: linear-gradient(180deg,
@@ -88,7 +88,7 @@ body {
   margin: auto;
   max-width: 1280px;
   min-height: 576px;
-}
+} */
 
 /* 프로필, 채팅, 입력창을 담는 컨테이너 */
 .container {
@@ -108,14 +108,16 @@ body {
 .profile-area {
   display: flex;
   align-items: center;
+  height: 3rem;
 }
 
 
 .profile-area>span {
-  margin-left: 10px;
-  font-size: 20px;
-  font-weight: semi-bold;
+
+  font-size: 30px;
+  font-weight: bold;
   color: var(--color-text);
+  background-color: #f9fbff;;
 }
 
 /* 입력창, 툴 */
