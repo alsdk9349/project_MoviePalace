@@ -97,7 +97,7 @@ onMounted(() => {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(157, 212, 173, 1);
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;

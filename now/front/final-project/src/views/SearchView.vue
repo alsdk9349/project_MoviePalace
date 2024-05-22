@@ -1,4 +1,8 @@
 <template>
+  <div class="g">
+
+
+  </div>
   <main>
     <div class="title">
       <h1 class="h1Tagst dokdo-regular">영화 검색</h1>
@@ -49,13 +53,21 @@ const searching = function(){
 </script>
 
 <style scoped>
+.g{
+  position: absolute;
+  width : 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 80%;
+  /* z-index: -1; */
+}
 .title {
   text-align: center; 
   margin-top: 30px; 
   margin-left: 100px;
   margin-right: 100px;
   color: white; 
-  background-color: rgba(100, 100, 100, 1);
+  background-color: white;
 }
 .pTagst{
   display: flex;

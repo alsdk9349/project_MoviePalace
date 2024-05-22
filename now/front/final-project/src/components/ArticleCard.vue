@@ -90,7 +90,7 @@ function goDetail(movieId){
   background-color:lightgoldenrodyellow;
 } */
 .bgcst{
-  background-color: rgba(222, 14, 14, 0);
+  background-color: white;
 }
 /* .h1Tag{
 

@@ -47,7 +47,8 @@ const goDetail = function(){
   font-weight: bold;
   text-align: center;
   align-content: center;
-  background-color: rgba(157, 212, 173, 0);
+  /* background-color: rgba(157, 212, 173, 0); */
+  background-color: white;
   border : 2px solid gray;
   color:rgb(101, 116, 101);
 }
