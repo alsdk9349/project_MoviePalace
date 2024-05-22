@@ -5,7 +5,8 @@ from dotenv import dotenv_values
 
 env = dotenv_values()
 
-TMDB_API_KEY = str(env.get('TMDB_API_KEY'))
+# TMDB_API_KEY = str(env.get('TMDB_API_KEY'))
+TMDB_API_KEY = 'f4df733efebe407d57d6b27c0bb68169'
 
 def get_movie_datas():
     total_data = []

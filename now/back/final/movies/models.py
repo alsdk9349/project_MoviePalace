@@ -29,6 +29,8 @@ class NowMovie(models.Model):
     vote_avg = models.FloatField()
     is_adult = models.BooleanField()
     poster_path = models.TextField(null=True)
+    original_language = models.TextField()
+    vote_count = models.IntegerField()
     genres = models.CharField(max_length=255)  # CharField로 변경
 
     def save(self, *args, **kwargs):
