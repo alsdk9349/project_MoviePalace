@@ -76,13 +76,13 @@ axios({
   margin-left: 100px;
   margin-right: 100px;
   color: white; 
-  background-color: rgba(100, 100, 100, 1);
+  background-color: white;
 }
 .pagination{
   display: flex;
   justify-content: center;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: white;
 }
 .page-item{
   color: ivory;

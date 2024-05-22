@@ -1,13 +1,15 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  background-color : rgba(157,212,173,0.1);
-
+  background-color: white;
+  /* background-color : #d9e1e8; */
 }
 
 h1 {
   margin: 0;
-  background-color : rgba(157,212,173,1);
-
+ background-color: white;
+ color : black;
+ font-weight: bold;
+ margin-top: 3rem;
 }
 
