@@ -1,19 +1,17 @@
 <template>
   <header>
-    <div class="d-flex">
-      <nav class='navbox'>
+      <nav class='navbox d-flex'>
         <RouterLink class="link" :to="{name : 'recommend'}">영화추천</RouterLink> 
         <RouterLink class="link" :to="{name : 'community'}">소통창구</RouterLink>
-        <RouterLink class="navbox" :to="{name : 'home'}">
+        <RouterLink :to="{name : 'home'}">
           <img src="@/assets/logo.jpg" alt="" class="img">
         </RouterLink> 
         <RouterLink class="link" :to="{name : 'search'}">영화검색</RouterLink> 
         <RouterLink class="link" :to="{name : 'chat'}">채팅</RouterLink>
       </nav>
 
-    </div>
   </header>
-  <h1> <br></h1>
+  <h1><br></h1>
   <RouterView />
 </template>
 
@@ -29,8 +27,6 @@ import { RouterLink, RouterView } from 'vue-router'
   height: 2rem;
   background-color: rgb(157,212,173);
   justify-content: space-around;
-  padding-left: 150px;
-  padding-right: 150px;
 }
 .link {
   margin: 10px;
@@ -39,12 +35,14 @@ import { RouterLink, RouterView } from 'vue-router'
   font-weight: bold;
   text-decoration-line: none;
   background-color: rgb(157,212,173);
-  width: 300px;
-  padding: 30px;
+  width: 15vw;
+  margin-top: 2rem;
 }
 .img{
   width:10rem;
   height:7rem;
   border: 5px solid black;
+
 }
+
 </style>
