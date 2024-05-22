@@ -1,15 +1,16 @@
 <template>
   <main>
-    <h1>Community</h1>
-    <div class="container row row-cols-1 row-cols-sm-2 row-cols-md-3">
-      <ArticleCard class="boxst col" v-for="movie in movies" :movie="movie" :key="movie.pk"/>
+    <div class="title">
+      <h1>소통 창구</h1>
     </div>
-
-    <nav aria-label="Page navigation example">
+    <ArticleCard class="pointer" v-for="movie in movies" :movie="movie" :key="movie.pk"/>
+    <nav class="pagination" aria-label="Page navigation example">
       <ul class="pagination">
-        <li class="page-item page-link" @click="minus()">Previous</li>
+        <li class="page-shift page-link" @click="start()">처음으로</li>
+        <li class="page-btn page-link" @click="minus()">이전</li>
           <li v-for="num in 10" class="page-item page-link" @click="pageChange(num + pageValue)">{{num + pageValue}}</li>
-        <li class="page-item page-link" @click="plus()">Next</li>
+        <li class="page-btn page-link" @click="plus()">다음</li>
+        <li class="page-shift page-link" @click="end()">끝으로</li>
       </ul>
     </nav>
   </main>
@@ -33,6 +34,13 @@ function plus(){
     pageValue.value += 10
   }
 }
+function start(){
+  pageValue.value = 0 
+}
+function end(){
+    pageValue.value = 460
+  }
+
 function pageChange(num){
   pageNum.value = num
   console.log(pageNum.value)
@@ -62,16 +70,44 @@ axios({
 </script>
 
 <style scoped>
-.container{
-  margin : 2px
+.title {
+  text-align: center; 
+  margin-top: 30px; 
+  margin-left: 100px;
+  margin-right: 100px;
+  color: white; 
+  background-color: rgba(100, 100, 100, 1);
+}
+.pagination{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0);
+}
+.page-item{
+  color: ivory;
+  font-weight: bold;
+  background-color: #a8dba8;
+}
+.pagination .page-item{
+  cursor: pointer;
+}
+.pointer{
+  cursor: pointer;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.page-btn{
+  cursor: pointer;
+  color: ivory;
+  font-weight: bold;
+  background-color:#79bd9acc;
 
 }
-.boxst{
-  box-sizing: border-box;
-  border :2px solid white;
-  margin :5px;
+.page-shift{
+  cursor: pointer;
+  color: ivory;
+  font-weight: bold;
+  background-color:  #79bd9a89;
 }
-
-
-
 </style>

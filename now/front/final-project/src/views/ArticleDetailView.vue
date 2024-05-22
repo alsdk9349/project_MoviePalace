@@ -1,20 +1,24 @@
-
 <template>
   <main>
-    <h1>ArticleDetail</h1>
-    <img class="img" :src=imgUrl alt="X">
-    <p class="font">title:{{ movie.title }}</p>
-    <p class="font">adult:{{ movie.adult }}</p>
-    <p class="font">genre:
-      <span v-for="genre, index in movie.genres"><span v-if="index!== 0">, </span>{{ genre.name }}</span>
-    </p>
-    <p class="font">overview:{{ movie.overview }}</p>
-    <p class="font">poster:{{ movie.poster_path }}</p>
-    <p class="font">runtime:{{ movie.runtime }}</p>
-    <p class="font">release_date:{{ movie.release_date }}</p>
-    <p class="font">video:{{ movie.video }}</p>
-    <p class="font">vote:{{ movie.vote_average }}</p>
-    <button><RouterLink :to="{name : 'moviecommunity', params : {'movieId' : movie.id}, query : {'title': movie.title, 'poster_path':movie.poster_path}}">커뮤니티</RouterLink></button>
+    <video v-show="videoVisible" autoplay muted loop @ended="hideVideo" ref="videoPlayer" @timeupdate="checkVideoTime" class="video">
+      <source src="@/assets/curtain1.mp4" type="video/mp4" />
+    </video>
+    <!-- <h1 v-if="!videoVisible">영화 세부 정보</h1> -->
+    <div v-if="!videoVisible" class="d-flex" style="border: solid black 5px; margin:20px">
+      <img class="img" :src="imgUrl" alt="X">
+      <div>
+        <h1 class="font">제목 : {{ movie.title }}</h1>
+        <p class="font">장르 : 
+          <span v-for="genre, index in movie.genres"><span v-if="index!== 0">, </span>{{ genre.name }}</span>
+        </p>
+        <p class="font">개요 : {{ movie.overview }}</p>
+        <p class="font">상영시간 : {{ movie.runtime }}분</p>
+        <p class="font">개봉일 : {{ movie.release_date }}</p>
+        <p class="font">평점 : {{ movie.vote_average }}</p>
+        <RouterLink class="linkst" :to="{name : 'moviecommunity', params : {'movieId' : movie.id}, query : {'title': movie.title, 'poster_path':movie.poster_path}}">소통 창구</RouterLink>
+      </div>
+    </div>
+
     <RouterView />
   </main>
 </template>
@@ -24,14 +28,14 @@ import { useRoute } from 'vue-router'
 import { RouterLink, RouterView } from 'vue-router'
 import axios from 'axios'
 import { ref } from 'vue'
+
 const route = useRoute()
 const movieId = route.params.movieId
-const API_KEY = 'f4df733efebe407d57d6b27c0bb68169'
-
-
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY
 
 const movie = ref([])
 const imgUrl = ref("https://image.tmdb.org/t/p/original") 
+
 axios({
   method : 'GET',
   url : 'https://api.themoviedb.org/3/movie/' + movieId,
@@ -42,19 +46,48 @@ axios({
 }).then((response) => {
   movie.value = response.data
   imgUrl.value += movie.value.poster_path
-})
-.catch((error) => {
+}).catch((error) => {
   console.log(error)
 })
 
+const videoVisible = ref(true)
+
+const hideVideo = () => {
+  videoVisible.value = false;
+}
+
+const checkVideoTime = (event) => {
+  const video = event.target;
+  if (video) {
+    if (video.currentTime >= 3) { // 3초 이상일 때
+      hideVideo(); // 비디오 숨기기
+    }
+  }
+}
 </script>
 
 <style scoped>
 .font{
-  color : white;
+  color : black;
+  font-weight: bold;
 }
 .img {
   width : 20rem;
   height : 30rem;
+  margin-right: 1rem;
+}
+.linkst{
+  text-decoration: none;
+  color : white;
+  background-color: olivedrab;
+  padding : 0.3rem;
+
+  border : 3px solid olivedrab;
+}
+.video {
+  width: 100vw;
+  height: calc(56.25vw);
+  margin: 0;
+  padding: 0;
 }
 </style>
