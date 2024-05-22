@@ -1,18 +1,18 @@
-`<template>
-  <div class="d-flex justify-content-center" @click = "goDetail(movie.id)">
+``<template>
+  <div class="d-flex bgcst justify-content-center" @click = "goDetail(movie.id)">
 
     <div class="d-flex align-items-center justify-content-between">
       <div class="ticket d-flex align-items-center" style="width: 1200px">
         <img class="img" :src="`https://image.tmdb.org/t/p/original/${prop.movie.poster_path}`" alt="X">
-        <div class="col-md-6 offset-md-1" style="margin: 0; width:750px; background-color: lightgoldenrodyellow;">
-          <h1 style="margin-top: 0;margin-bottom: 30px;">영화 관람권</h1>
-          <h3 style="margin-top: 70px;">{{ movie.title }}</h3>
+        <div class="col-md-6 offset-md-1" style="margin: 0; width:750px; height: 5rem; background-color: lightgoldenrodyellow;">
+          <h1 class="h1Tag">영화 관람권</h1>
+          <h3 >{{ movie.title }}</h3>
           <p>{{ currentDateTime }}</p>
         </div>
         <!-- <div class="barcode-container justify-content-center align-items-center" >
           <img :src="qrcode" alt="X" style="max-width: 100%; height: 40%; display: block; margin: auto;">
         </div> -->
-        <div class="barcode-container col-md-3 offset-md-10" style="margin: 0; width:200px;">
+        <div class="barcode-container " style="margin: 0; width:200px;">
           <img :src="barcode" class="d-block" alt="X" style="margin: 0; width: 100%;">
         </div>
       </div>
@@ -88,5 +88,15 @@ function goDetail(movieId){
 }
 /* .ticket h3{
   background-color:lightgoldenrodyellow;
+} */
+.bgcst{
+  background-color: rgba(222, 14, 14, 0);
+}
+/* .h1Tag{
+
+  width: 100%;
+  height: 100%;
+  font-weight: 900;
+  font-size: 500%;
 } */
 </style>

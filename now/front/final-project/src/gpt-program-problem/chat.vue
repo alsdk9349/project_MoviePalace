@@ -6,7 +6,7 @@
 
           <div class="top-area">
             <div class="profile-area">
-              <span>길라잡이</span>
+              <span >길라잡이</span>
             </div>
           </div>
           <!-- 채팅 영역 -->
@@ -103,7 +103,7 @@ import './style.css'
   background-color: var(--color-gray);
 } */
 .section-scrollable{
-  height: 70vh;
+  height: 80vh;
   overflow-y: auto;
 }
 

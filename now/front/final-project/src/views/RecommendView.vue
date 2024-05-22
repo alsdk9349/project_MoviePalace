@@ -18,7 +18,7 @@
         <option class="option" value="35">코미디</option>
         <option class="option" value="12">모험</option>
         <option class="option" value="28">액션</option>
-        <option class="option" value="878">SF</option>
+        <option class="option" value="878">공상과학</option>
         <option class="option" value="16">애니메이션</option>
         <option class="option" value="10751">가족</option>
         <option class="option" value="18">드라마</option>

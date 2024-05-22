@@ -4,13 +4,13 @@
       <h1>소통 창구</h1>
     </div>
     <ArticleCard class="pointer" v-for="movie in movies" :movie="movie" :key="movie.pk"/>
-    <nav aria-label="Page navigation example">
+    <nav class="pagination" aria-label="Page navigation example">
       <ul class="pagination">
-        <li class="page-item page-link" @click="start()">처음으로</li>
-        <li class="page-item page-link" @click="minus()">이전</li>
+        <li class="page-shift page-link" @click="start()">처음으로</li>
+        <li class="page-btn page-link" @click="minus()">이전</li>
           <li v-for="num in 10" class="page-item page-link" @click="pageChange(num + pageValue)">{{num + pageValue}}</li>
-        <li class="page-item page-link" @click="plus()">다음</li>
-        <li class="page-item page-link" @click="end()">끝으로</li>
+        <li class="page-btn page-link" @click="plus()">다음</li>
+        <li class="page-shift page-link" @click="end()">끝으로</li>
       </ul>
     </nav>
   </main>
@@ -82,17 +82,31 @@ axios({
   display: flex;
   justify-content: center;
   padding: 20px;
+  background-color: rgba(0, 0, 0, 0);
 }
 .page-item{
   color: ivory;
-  background-color: rgb(85, 138, 85);
+  font-weight: bold;
+  background-color: #a8dba8;
 }
-.pagination .page-item {
+.pagination .page-item{
   cursor: pointer;
 }
 .pointer{
   cursor: pointer;
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+.page-btn{
+  cursor: pointer;
+  color: ivory;
+  font-weight: bold;
+  background-color:#79bd9acc;
+}
+.page-shift{
+  cursor: pointer;
+  color: ivory;
+  font-weight: bold;
+  background-color:  #79bd9a89;
 }
 </style>
