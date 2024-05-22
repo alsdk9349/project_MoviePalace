@@ -8,10 +8,6 @@
   --color-gray: #aab5b5;
 }
 
-/** 
-  실습에 사용되는 클래스 
-*/
-
 /* 채팅 영역 */
 .chat-area {
   width: 100%;
@@ -49,8 +45,10 @@
 
 /* 전송한 채팅 */
 .send-chat {
-  background-color: var(--color-primary);
+  /* background-color: var(--color-primary); */
+  background-color: black;
   align-self: flex-end;
+  color : white;
 }
 
 /* 수신한 채팅 */

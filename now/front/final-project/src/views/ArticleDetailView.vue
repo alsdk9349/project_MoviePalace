@@ -28,8 +28,7 @@ import axios from 'axios'
 import { ref } from 'vue'
 const route = useRoute()
 const movieId = route.params.movieId
-const API_KEY = 'f4df733efebe407d57d6b27c0bb68169'
-
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY
 
 
 const movie = ref([])

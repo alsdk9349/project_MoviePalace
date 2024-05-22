@@ -5,15 +5,15 @@
       <!-- 프로필 영역 -->
       <div class="top-area">
         <div class="profile-area">
-          <span>ChatGPT</span>
+          <span>길라잡이</span>
         </div>
       </div>
       <!-- 채팅 영역 -->
-      <div class="chat-area" ref="chatArea"></div>
+      <div class="chat-area chatst" ref="chatArea"></div>
 
       <!-- 채팅창 하단 영역 -->
       <div class="bottom-area">
-        <input class="chat-input" type="text" placeholder="type a message..." ref="chatInput" />
+        <input class="chat-input" type="text" placeholder="할말을 입력해주세요" ref="chatInput" />
       </div>
     </section>
   </div>
@@ -84,9 +84,10 @@ export default {
     };
   }
 };
+
+import './style.css'
 </script>
 
 <style scoped>
-@import url('./style.css');
 
 </style>
