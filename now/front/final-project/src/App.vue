@@ -7,7 +7,7 @@
           <img src="@/assets/logo.jpg" alt="" class="img">
         </RouterLink> 
         <RouterLink class="link" :to="{name : 'search'}">영화검색</RouterLink> 
-        <RouterLink class="link" :to="{name : 'chat'}">채팅</RouterLink>
+        <RouterLink class="link" :to="{name : 'chat'}">길라잡이</RouterLink>
       </nav>
 
   </header>
