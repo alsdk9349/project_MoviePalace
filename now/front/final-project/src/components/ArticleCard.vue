@@ -1,10 +1,10 @@
 <template>
-  <div @click = "goDetail(movie.id)">
+  <div class="" @click = "goDetail(movie.id)">
     <!-- movie.id = {{ movie.id }} -->
     <div class="divfont">
       <img class="img" :src="`https://image.tmdb.org/t/p/original/${prop.movie.poster_path}`" alt="X">
       <p>{{ movie.title }}</p>
-      <p>{{ movie.overview }}</p>
+      <p class="ptag">{{ movie.overview }}</p>
     </div>
   </div>
 </template>
@@ -27,10 +27,13 @@ function goDetail(movieId){
 <style scoped>
 .divfont {
   color : white;
-  border : 2px solid white;
+  width : 30vw;
 }
 .img{
-  width: 20rem;
-  height: 30rem;
+  width: 20%;
+  height: 30%;
+}
+.ptag{
+  width : 80%;
 }
 </style>

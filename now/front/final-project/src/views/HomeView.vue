@@ -9,27 +9,27 @@
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
       </div>
       <div class="carousel-inner">
-        <div class="carousel-item active">
+        <div class="carousel-item d-flex  justify-content-center active">
           <img :src="homeimg1" class="d-block img" alt="...">
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item d-flex  justify-content-center">
           <img :src="homeimg2" class="d-block img" alt="...">
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item d-flex  justify-content-center">
           <img :src="homeimg3" class="d-block img" alt="...">
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item d-flex  justify-content-center">
           <img :src="homeimg4" class="d-block img" alt="...">
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item d-flex justify-content-center">
           <img :src="homeimg5" class="d-block img" alt="...">
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <button class=" frame carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <button class=" frame carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -54,4 +54,5 @@ import homeimg5 from '@/assets/homeimage5.png'
   width: 80vw;
   height: 70vh; 
 } 
+
 </style>

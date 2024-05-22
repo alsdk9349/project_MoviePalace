@@ -1,7 +1,10 @@
 <template>
   <main>
     <h1>Community</h1>
-    <ArticleCard v-for="movie in movies" :movie="movie" :key="movie.pk"/>
+    <div class="container row row-cols-1 row-cols-sm-2 row-cols-md-3">
+      <ArticleCard class="boxst col" v-for="movie in movies" :movie="movie" :key="movie.pk"/>
+    </div>
+
     <nav aria-label="Page navigation example">
       <ul class="pagination">
         <li class="page-item page-link" @click="minus()">Previous</li>
@@ -59,5 +62,16 @@ axios({
 </script>
 
 <style scoped>
+.container{
+  margin : 2px
+
+}
+.boxst{
+  box-sizing: border-box;
+  border :2px solid white;
+  margin :5px;
+}
+
+
 
 </style>
