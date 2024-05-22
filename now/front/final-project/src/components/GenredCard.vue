@@ -1,7 +1,7 @@
 <template>
  <div class="cardst">
       <div class="centerst" @click="goDetail()">
-      <h4 class="textst">{{ movie.title }}</h4>
+      <h4 class="textst kirang-haerang-regular">{{ movie.title }}</h4>
       <img class="img" :src="`https://image.tmdb.org/t/p/original/${props.movie.poster_path}`" alt="X">
     </div>
   </div>
@@ -51,5 +51,10 @@ const goDetail = function(){
   background-color: rgba(157, 212, 173, 0);
   border : 2px solid gray;
   color:rgb(101, 116, 101);
+}
+.kirang-haerang-regular {
+  font-family: "Kirang Haerang", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 </style>

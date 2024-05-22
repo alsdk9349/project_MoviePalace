@@ -1,7 +1,7 @@
 <template>
   <main>
     <div class="title">
-      <h1 class="h1Tagst">영화 검색</h1>
+      <h1 class="h1Tagst dokdo-regular">영화 검색</h1>
     </div>
     <div class="col-6 offset-3 mt-3">
       <div class="input-group mb-3 ">
@@ -62,7 +62,11 @@ const searching = function(){
   width:80vw;
   margin-left: 10vw;
 }
-/* .h1Tagst{
-  width : 50vw;
-} */
+.dokdo-regular {
+  font-family: "Dokdo", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size:10vh;
+  color: #3f4040;
+}
 </style>

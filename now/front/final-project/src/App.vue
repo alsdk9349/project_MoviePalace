@@ -1,15 +1,14 @@
 <template>
   <header>
       <nav class='navbox d-flex'>
-        <RouterLink class="link" :to="{name : 'recommend'}">영화추천</RouterLink> 
-        <RouterLink class="link" :to="{name : 'community'}">소통창구</RouterLink>
+        <RouterLink class="link" :to="{name : 'recommend'}"><p>영화추천</p></RouterLink> 
+        <RouterLink class="link" :to="{name : 'community'}"><p>소통창구</p></RouterLink>
         <RouterLink :to="{name : 'home'}">
-          <img src="@/assets/logo.jpg" alt="" class="img">
+          <img src="@/assets/logo.png" alt="" class="img">
         </RouterLink> 
-        <RouterLink class="link" :to="{name : 'search'}">영화검색</RouterLink> 
-        <RouterLink class="link" :to="{name : 'chat'}">길라잡이</RouterLink>
+        <RouterLink class="link" :to="{name : 'search'}"><p>영화검색</p></RouterLink> 
+        <RouterLink class="link" :to="{name : 'chat'}"><p>길라잡이</p></RouterLink>
       </nav>
-
   </header>
   <RouterView />
 </template>
@@ -19,7 +18,6 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <style scoped>
-
 .navbox {
   display: flex;
   width: 100%;
@@ -29,10 +27,7 @@ import { RouterLink, RouterView } from 'vue-router'
   justify-content: space-around;
 }
 .link {
-  margin: 10px;
   color : darkslategray;
-  font-style:italic;
-  font-weight: bold;
   text-decoration-line: none;
   background-color:#a8dba8, ;
   width: 15vw;
@@ -43,5 +38,16 @@ import { RouterLink, RouterView } from 'vue-router'
   height:7rem;
   border: 5px solid black;
 }
+.nanum-brush-script-regular {
+  font-family: "Nanum Brush Script", cursive;
+  font-weight: 400;
+  font-style: normal;
 
+}
+p{
+  font-family: "Kirang Haerang", system-ui;
+  font-weight: 400;
+  font-style:normal;
+  font-size: xx-large;
+}
 </style>

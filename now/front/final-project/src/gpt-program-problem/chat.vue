@@ -6,7 +6,7 @@
 
           <div class="top-area">
             <div class="profile-area">
-              <span >길라잡이</span>
+              <span class="dokdo-regular">길라잡이</span>
             </div>
           </div>
           <!-- 채팅 영역 -->
@@ -106,5 +106,11 @@ import './style.css'
   height: 80vh;
   overflow-y: auto;
 }
-
+.dokdo-regular {
+  font-family: "Dokdo", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size:6vh;
+  color: #3f4040;
+}
 </style>

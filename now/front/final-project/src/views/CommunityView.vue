@@ -1,7 +1,7 @@
 <template>
   <main>
     <div class="title">
-      <h1>소통 창구</h1>
+      <h1 class="dokdo-regular">소통 창구</h1>
     </div>
     <ArticleCard class="pointer" v-for="movie in movies" :movie="movie" :key="movie.pk"/>
     <nav class="pagination" aria-label="Page navigation example">
@@ -110,4 +110,12 @@ axios({
   font-weight: bold;
   background-color:  #79bd9a89;
 }
+.dokdo-regular {
+  font-family: "Dokdo", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size:10vh;
+  color: #3f4040;
+}
+
 </style>

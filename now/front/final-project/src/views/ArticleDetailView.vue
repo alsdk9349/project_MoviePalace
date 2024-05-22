@@ -7,7 +7,7 @@
     <div v-if="!videoVisible" class="d-flex" style="border: solid black 5px; margin:20px">
       <img class="img" :src="imgUrl" alt="X">
       <div>
-        <h1 class="font">제목 : {{ movie.title }}</h1>
+        <h1 class="font kirang-haerang-regular">제목 : {{ movie.title }}</h1>
         <p class="font">장르 : 
           <span v-for="genre, index in movie.genres"><span v-if="index!== 0">, </span>{{ genre.name }}</span>
         </p>
@@ -90,4 +90,20 @@ const checkVideoTime = (event) => {
   margin: 0;
   padding: 0;
 }
+.kirang-haerang-regular {
+  font-family: "Kirang Haerang", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.nanum-brush-script-regular {
+  font-family: "Nanum Brush Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+p {
+  font-family: "Dokdo", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
 </style>

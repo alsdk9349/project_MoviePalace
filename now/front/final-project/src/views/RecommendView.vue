@@ -2,7 +2,7 @@
   <main>
     <div class="wrapst">
 
-      <h1>현재 상영중</h1>
+      <h1 class="dokdo-regular">현재 상영중</h1>
       <div>
         <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 justify-content-center justify-content-md-around" >
           <NowPlayingCard class="col" v-for="movie in movies" :key="movie.id" :movie="movie"/>
@@ -10,7 +10,7 @@
       </div>
       <br>
       <br>
-      <h1>장르별 추천</h1>
+      <h1 class="dokdo-regular">장르별 추천</h1>
       <!-- <label for="selectedGenre" class="form-label"></label> -->
       <select class="form-select selectbox" aria-label="Default select example" v-model="selectedGenre">
         <option disabled value="">장르를 선택하세요.</option>
@@ -108,5 +108,12 @@ watch(selectedGenre, (newselectedGenre)=>{
 
 .wrapst > select {
   align-self: center;
+}
+.dokdo-regular {
+  font-family: "Dokdo", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size:10vh;
+  color: #3f4040;
 }
 </style>
