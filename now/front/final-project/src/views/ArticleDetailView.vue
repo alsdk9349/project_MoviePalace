@@ -3,7 +3,7 @@
     <video v-show="videoVisible" autoplay muted loop @ended="hideVideo" ref="videoPlayer" @timeupdate="checkVideoTime" class="video">
       <source src="@/assets/curtain1.mp4" type="video/mp4" />
     </video>
-    <h1>ArticleDetail</h1>
+    <h1 v-if="!videoVisible">ArticleDetail</h1>
     <div v-if="!videoVisible" class="d-flex" style="border: solid black 5px; margin:20px">
       <img class="img" :src="imgUrl" alt="X">
       <div>
