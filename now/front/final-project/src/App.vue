@@ -11,7 +11,6 @@
       </nav>
 
   </header>
-  <h1><br></h1>
   <RouterView />
 </template>
 
@@ -24,8 +23,9 @@ import { RouterLink, RouterView } from 'vue-router'
 .navbox {
   display: flex;
   width: 100%;
-  height: 2rem;
-  background-color: rgb(157,212,173);
+  height: 5rem;
+  background: linear-gradient( #cff09e, #79bd9a);
+  /* background-color : rgb(157,212,173); */
   justify-content: space-around;
 }
 .link {
@@ -34,7 +34,7 @@ import { RouterLink, RouterView } from 'vue-router'
   font-style:italic;
   font-weight: bold;
   text-decoration-line: none;
-  background-color: rgb(157,212,173);
+  background-color:#a8dba8, ;
   width: 15vw;
   margin-top: 2rem;
 }
@@ -42,7 +42,6 @@ import { RouterLink, RouterView } from 'vue-router'
   width:10rem;
   height:7rem;
   border: 5px solid black;
-
 }
 
 </style>

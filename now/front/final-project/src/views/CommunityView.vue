@@ -102,6 +102,7 @@ axios({
   color: ivory;
   font-weight: bold;
   background-color:#79bd9acc;
+
 }
 .page-shift{
   cursor: pointer;
