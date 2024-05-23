@@ -1,8 +1,13 @@
 import requests
 import json
+import os
+from dotenv import load_dotenv
 
-# TMDB_API_KEY = str(env.get('TMDB_API_KEY'))
-TMDB_API_KEY = 'f4df733efebe407d57d6b27c0bb68169'
+# .env 파일 로드
+load_dotenv()
+
+# API 키 불러오기
+TMDB_API_KEY = os.getenv('TMDB_API_KEY')
 
 def get_movie_datas():
     total_data = []
