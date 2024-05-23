@@ -14,7 +14,7 @@ def recommend_list(request):
         nowmovies = NowMovie.objects.all()
 
         serializer = NowMovieListSerializer(nowmovies, many=True)
-    return Response(serializer.data)
+    return Response(serializer.data, status=status.HTTP_200_OK)
 
 def detail(request):
     pass
@@ -30,7 +30,7 @@ def movie_list(request):
         page_movies = paginator.get_page(page)
 
         serializer = MovieListSerializer(page_movies, many=True)
-        return Response(serializer.data)
+        return Response(serializer.data, status=status.HTTP_200_OK)
     
 def genre_filter(datas, genre_num):
     serializers  = []
@@ -50,7 +50,7 @@ def genre_list(request, genre_pk):
         serializer = genre_filter(serializers.data, genre_pk)
         serializer = serializer[:20]
 
-        return Response(serializer)
+        return Response(serializer, status=status.HTTP_200_OK)
     
 @api_view(['GET','POST'])
 def community(request, movie_pk):
@@ -64,7 +64,7 @@ def community(request, movie_pk):
     else:
         comments = Comment.objects.filter(movie_id=movie_pk)
         serializer = CommentListSerializer(comments, many = True)
-        return Response(serializer.data)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 def search_filter(datas, word):
     serializers  = []
@@ -84,5 +84,5 @@ def search(request, word):
     serializer = search_filter(serializers.data, word)
     serializer = serializer[:100]
 
-    return Response(serializer)
+    return Response(serializer, status=status.HTTP_200_OK)
 

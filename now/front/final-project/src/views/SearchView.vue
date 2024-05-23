@@ -1,8 +1,4 @@
 <template>
-  <div class="g">
-
-
-  </div>
   <main>
     <div class="title">
       <h1 class="h1Tagst dokdo-regular">영화 검색</h1>

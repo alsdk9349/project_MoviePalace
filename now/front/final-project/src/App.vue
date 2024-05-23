@@ -3,15 +3,15 @@
     <div class="bgc">
   </div>
       <nav class='navbox d-flex'>
-        <RouterLink class="link" :to="{name : 'recommend'}"><p>영화추천</p></RouterLink> 
-        <RouterLink class="link" :to="{name : 'community'}"><p>소통창구</p></RouterLink>
+        <RouterLink class="pFont link" :to="{name : 'recommend'}">영화추천</RouterLink> 
+        <RouterLink class="pFont link" :to="{name : 'community'}">소통창구</RouterLink>
         <RouterLink :to="{name : 'home'}">
 
             
             <img src="@/assets/logo.png" alt="" class="img">
         </RouterLink> 
-        <RouterLink class="link" :to="{name : 'search'}"><p>영화검색</p></RouterLink> 
-        <RouterLink class="link" :to="{name : 'chat'}"><p>길라잡이</p></RouterLink>
+        <RouterLink class="pFont link" :to="{name : 'search'}">영화검색</RouterLink> 
+        <RouterLink class="pFont link" :to="{name : 'chat'}">길라잡이</RouterLink>
       </nav>
   </header>
     <RouterView />
@@ -37,7 +37,7 @@ import { RouterLink, RouterView } from 'vue-router'
   background-color : rgb(0, 70, 42);
   /* background-color:#a8dba8 ; */
   width: 15vw;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .img{
   width:10rem;
@@ -52,10 +52,11 @@ import { RouterLink, RouterView } from 'vue-router'
   font-style: normal;
 
 }
-p{
+.pFont{
   font-family: "Kirang Haerang", system-ui;
   font-weight: 400;
   font-style:normal;
   font-size: xx-large;
+  color: white;
 }
 </style>
