@@ -2,17 +2,15 @@
   <header>
     <div class="bgc">
   </div>
-      <nav class='navbox d-flex'>
-        <RouterLink class="pFont link" :to="{name : 'recommend'}">영화추천</RouterLink> 
-        <RouterLink class="pFont link" :to="{name : 'community'}">소통창구</RouterLink>
-        <RouterLink :to="{name : 'home'}">
-
-            
-            <img src="@/assets/logo.png" alt="" class="img">
-        </RouterLink> 
-        <RouterLink class="pFont link" :to="{name : 'search'}">영화검색</RouterLink> 
-        <RouterLink class="pFont link" :to="{name : 'chat'}">길라잡이</RouterLink>
-      </nav>
+    <nav class='navbox d-flex'>
+      <RouterLink class="pFont link" :to="{name : 'recommend'}">영화추천</RouterLink> 
+      <RouterLink class="pFont link" :to="{name : 'community'}">소통창구</RouterLink>
+      <RouterLink :to="{name : 'home'}">
+        <img src="@/assets/logo.png" alt="" class="img">
+      </RouterLink> 
+      <RouterLink class="pFont link" :to="{name : 'search'}">영화검색</RouterLink> 
+      <RouterLink class="pFont link" :to="{name : 'chat'}">길라잡이</RouterLink>
+    </nav>
   </header>
     <RouterView />
 </template>
@@ -26,7 +24,6 @@ import { RouterLink, RouterView } from 'vue-router'
   display: flex;
   width: 100%;
   height: 5rem;
-  /* background: linear-gradient( #cff09e, #79bd9a); */
   background-color : rgb(0, 70, 42);
   justify-content: space-around;
   z-index: -1;
@@ -35,7 +32,6 @@ import { RouterLink, RouterView } from 'vue-router'
   color : darkslategray;
   text-decoration-line: none;
   background-color : rgb(0, 70, 42);
-  /* background-color:#a8dba8 ; */
   width: 15vw;
   margin-top: 1rem;
 }
@@ -44,7 +40,6 @@ import { RouterLink, RouterView } from 'vue-router'
   height:7rem;
   border: 5px solid black;
   background-color: white;
-  /* opacity: 100%; */
 }
 .nanum-brush-script-regular {
   font-family: "Nanum Brush Script", cursive;

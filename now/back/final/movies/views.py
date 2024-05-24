@@ -70,7 +70,6 @@ def search_filter(datas, word):
     serializers  = []
     for serializer in datas:
         if word in serializer.get('title'):
-
             serializer = MovieListSerializer(serializer)
             serializers.append(serializer.data)
     

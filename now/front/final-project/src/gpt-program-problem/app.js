@@ -16,7 +16,7 @@ const addChat = (type, value) => {
 const OPEN_API_URL = 'https://api.openai.com/v1/chat/completions'
 
 // 2. API 키 (발급 받은 Secret Key)
-const API_KEY = import.meta.env.GPT_API_KEY
+const API_KEY = import.meta.env.VITE_GPT_API_KEY
 
 // 필요한 헤더 정보
 const headers = {

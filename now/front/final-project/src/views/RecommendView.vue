@@ -1,7 +1,6 @@
 <template>
   <main>
     <div class="wrapst">
-
       <h1 class="dokdo-regular">현재 상영중</h1>
       <div>
         <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 justify-content-center justify-content-md-around" >
@@ -11,7 +10,6 @@
       <br>
       <br>
       <h1 class="dokdo-regular">장르별 추천</h1>
-      <!-- <label for="selectedGenre" class="form-label"></label> -->
       <select class="form-select selectbox" aria-label="Default select example" v-model="selectedGenre">
         <option disabled value="">장르를 선택하세요.</option>
         <option class="option" value="80">범죄</option>
@@ -32,7 +30,6 @@
         <option class="option" value="10770">TV영화</option>
         <option class="option" value="27">공포</option>
         <option class="option" value="36">역사</option>
-        <!-- <option class="option" value="99">다큐멘터리</option> -->
       </select>
       <br>
       <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 justify-content-center justify-content-md-around" >          
@@ -47,7 +44,6 @@
 
 import NowPlayingCard from '@/components/NowPlayingCard.vue'
 import GenredCard from '@/components/GenredCard.vue'
-import { onUpdated } from 'vue'
 import axios from 'axios'
 import {ref, watch} from 'vue'
 

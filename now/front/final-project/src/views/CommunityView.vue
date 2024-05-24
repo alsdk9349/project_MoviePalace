@@ -87,7 +87,7 @@ axios({
 .page-item{
   color: ivory;
   font-weight: bold;
-  background-color: #a8dba8;
+  background-color: #afb3af;
 }
 .pagination .page-item{
   cursor: pointer;
@@ -101,14 +101,14 @@ axios({
   cursor: pointer;
   color: ivory;
   font-weight: bold;
-  background-color:#79bd9acc;
+  background-color:#464d49a6;
 
 }
 .page-shift{
   cursor: pointer;
   color: ivory;
   font-weight: bold;
-  background-color:  #79bd9a89;
+  background-color:  #29322d77;
 }
 .dokdo-regular {
   font-family: "Dokdo", system-ui;

@@ -1,6 +1,6 @@
 <template>
  <div class="cardst">
-      <div class="centerst" @click="goDetail()">
+    <div class="centerst" @click="goDetail()">
       <h4 class="textst kirang-haerang-regular">{{ movie.title }}</h4>
       <img class="img" :src="`https://image.tmdb.org/t/p/original/${props.movie.poster_path}`" alt="X">
     </div>
@@ -48,7 +48,6 @@ const goDetail = function(){
 .textst{
   text-align: center;
   align-content: center;
-  /* background-color: rgba(157, 212, 173, 0); */
   background-color: white;
   border : 2px solid gray;
   color:rgb(101, 116, 101);

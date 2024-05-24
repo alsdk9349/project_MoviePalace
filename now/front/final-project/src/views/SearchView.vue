@@ -10,7 +10,6 @@
       </div>  
     </div>
 
-
     <!-- 밑에 search된 카드 components 띄우기 -->
     <span v-if="searchMovie.length"> 
       <div class="pTagst">{{searchMovie.length}}개의 검색 결과가 있습니다.</div>

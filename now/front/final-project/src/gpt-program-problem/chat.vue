@@ -3,26 +3,24 @@
     <!-- 채팅창 화면 -->
     <section class="container section-scrollable" style="margin-top:5rem">
       <!-- 프로필 영역 -->
-
-          <div class="top-area">
-            <div class="profile-area">
-              <span class="dokdo-regular">길라잡이</span>
-            </div>
-          </div>
+      <div class="top-area">
+        <div class="profile-area">
+          <span class="dokdo-regular" style="margin-top:50px ;">길라잡이</span>
+        </div>
+      </div>
           <!-- 채팅 영역 -->
-          <div class="chat-area" ref="chatArea"></div>
-          
+      <div class="chat-area" ref="chatArea"></div>
           <!-- 채팅창 하단 영역 -->
-          <div class="bottom-area">
-            <input class="chat-input" type="text" placeholder="할말을 입력해주세요" ref="chatInput" />
-          </div>
-      </section>
+        <div class="bottom-area">
+          <input class="chat-input" type="text" placeholder="할말을 입력해주세요" ref="chatInput" />
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
-import {ref} from 'vue';
+
 export default {
   mounted() {
     this.$nextTick(() => {
@@ -51,14 +49,12 @@ export default {
       chatContainer.scrollTop = chatContainer.scrollHeight;
     },
     chatReceive(userMsg) {
-      // const answer = ref("");
-      // this.addChat("receive", answer.value);
       const answer ="길라잡이"
       this.addChat("receive", answer);
     },
     sendMessageToServer(message) {
       const OPEN_API_URL = 'https://api.openai.com/v1/chat/completions';
-      const API_KEY = 'sk-proj-2y5MeZ5AwEShg3zqkkbET3BlbkFJMURTlOkcUQlACUtQ8OdU';
+      const API_KEY = import.meta.env.VITE_GPT_API_KEY;
       const headers = {
         Authorization: `Bearer ${API_KEY}`,
         'Content-Type': 'application/json'
@@ -92,16 +88,6 @@ import './style.css'
 </script>
 
 <style scoped>
-/* .send-chat {
-  
-  background-color: black;
-  align-self: flex-end;
-  color : white;
-} */
-
-/* .receive-chat {
-  background-color: var(--color-gray);
-} */
 .section-scrollable{
   height: 80vh;
   overflow-y: auto;
@@ -112,5 +98,6 @@ import './style.css'
   font-style: normal;
   font-size:6vh;
   color: #3f4040;
+  text-align: center;
 }
 </style>
