@@ -15,7 +15,7 @@
         <p class="font">상영시간 : {{ movie.runtime }}분</p>
         <p class="font">개봉일 : {{ movie.release_date }}</p>
         <p class="font">평점 : {{ movie.vote_average }}</p>
-        <RouterLink class="linkst" :to="{name : 'moviecommunity', params : {'movieId' : movie.id}, query : {'title': movie.title, 'poster_path':movie.poster_path}}">대화방</RouterLink>
+        <RouterLink class="linkst" :to="{name : 'moviecommunity', params : {'movieId' : movie.id}, query : {'title': movie.title, 'poster_path':movie.poster_path}}">소통 창구</RouterLink>
       </div>
     </div>
 
@@ -105,7 +105,6 @@ p {
   font-family: "Dokdo", system-ui;
   font-weight: 400;
   font-style: normal;
-  font-size: x-large;
 }
 
 </style>

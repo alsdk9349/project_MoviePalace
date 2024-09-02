@@ -5,7 +5,7 @@
       <!-- 프로필 영역 -->
       <div class="top-area">
         <div class="profile-area">
-          <span class="dokdo-regular" style="margin-top:50px ;">길라잡이</span>
+          <span class="dokdo-regular">길라잡이</span>
         </div>
       </div>
           <!-- 채팅 영역 -->
@@ -98,6 +98,5 @@ import './style.css'
   font-style: normal;
   font-size:6vh;
   color: #3f4040;
-  text-align: center;
 }
 </style>
